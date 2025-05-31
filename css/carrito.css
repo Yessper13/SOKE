@@ -1,0 +1,32 @@
+body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .producto {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+    }
+
+    .producto img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+
+    .info {
+      flex-grow: 1;
+    }
+
+    .nombre {
+      font-weight: bold;
+    }
+
+    .valor {
+      color: green;
+    }

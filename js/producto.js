@@ -66,6 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("previewImage").src = "../imagenes/imagen.png";
 
     alert("Producto agregado al catálogo.");
-    window.location.href = "catalogo.html";
+    /* window.location.href = "catalogo.html"; */
   });
 });
