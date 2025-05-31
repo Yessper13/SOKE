@@ -1,0 +1,74 @@
+/* Fondo gris semi-transparente */
+.mensaje-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Caja blanca centrada */
+.mensaje-contenedor {
+  background: white;
+  padding: 30px 25px;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 300px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  font-family: Arial, sans-serif;
+}
+
+/* Estilo de la caja del tiempo */
+.tiempo-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.numero-tiempo {
+  font-size: 48px;
+  margin-right: 5px;
+}
+
+.icono-reloj {
+  font-size: 36px;
+  margin-right: 5px;
+}
+
+.texto-tiempo {
+  font-size: 20px;
+}
+
+/* Botones */
+.botones-opciones {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-opcion {
+  flex: 1;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.btn-tienda {
+  background-color: #1d4ed8; /* Azul */
+}
+
+.btn-domicilio {
+  background-color: #f97316; /* Naranja */
+}

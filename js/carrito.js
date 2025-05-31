@@ -57,6 +57,7 @@ document.getElementById("checkout-btn").addEventListener("click", () => {
   localStorage.removeItem('carrito');
   cartItems = [];
   renderCart();
+  window.location.href = "../html/productoSeparado.html";
 });
 
 // Inicializar

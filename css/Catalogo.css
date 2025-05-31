@@ -155,7 +155,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5); /* Opacidad */
+  background-color: rgba(255, 255, 255, 0.568); /* Opacidad */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -164,13 +164,13 @@
 
 /* Mensaje centrado */
 .mensaje-toast-centrado {
-  background-color: #c70d0d;
-  color: white;
+  background-color: #f3eded;
+  color: rgb(0, 0, 0);
   padding: 20px 30px;
   border-radius: 8px;
   font-size: 18px;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   max-width: 80%;
 }
 
@@ -180,3 +180,9 @@
 }
 
 
+.contenedor-busqueda input {
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
