@@ -1,0 +1,84 @@
+.main {
+  margin-top: 0px; /* para dejar espacio si el header es fijo */
+  padding: 20px;
+}
+
+.buscador {
+  display: flex;
+  justify-content: center; /* centrado horizontal */
+  margin-bottom: 20px;
+}
+
+.buscador form {
+  width: 100%;
+  max-width: 600px; /* para que no se haga muy ancho */
+}
+
+.buscador input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 100%; /* para que se ajuste al form */
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+}
+
+.contenido {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.mapa,
+.publicidad {
+  flex: 1 1 300px; /* que ocupen 1fr mínimo 300px */
+  max-width: 100%;
+  align-items: center;
+}
+.mapa {
+  display: flex;
+  justify-content: center;
+}
+
+.mapa img,
+.publicidad img {
+  max-width: 90%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+#botonesMapa button:hover {
+  background-color: #E95D2C;
+  color: #E95D2C;
+  border-color: #E95D2C;
+  transition: background-color 0.3s ease;
+}
+
+.main h3 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.acciones-imagen {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.acciones-imagen button {
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  background-color: #f0743e;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s ease;
+}
+
+.acciones-imagen button:hover {
+  background-color: #e65a20;
+}
+
