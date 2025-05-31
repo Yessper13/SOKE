@@ -1,0 +1,150 @@
+.contenedor-productos {
+  display: grid;
+  gap: 20px;
+  padding: 10px;
+  justify-content: center;
+}
+
+/* Estilos por defecto para móviles */
+.producto {
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 10px;
+  min-height: 15vh;
+  box-shadow: -1px 1px 20px rgba(0, 0, 0, 0.1);
+  min-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.producto-img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.producto-marca {
+  margin: 10px 0 5px 0;
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+.producto-nombre {
+  margin: 0 0 10px 0;
+  font-size: 15px;
+}
+
+.producto-precio {
+  font-weight: bold;
+  font-size: 18px;
+  color: #2980b9;
+}
+
+.precio-anterior {
+  text-decoration: line-through;
+  color: gray;
+  font-size: 14px;
+  margin-left: 8px;
+}
+
+.producto-estrellas {
+  margin: 8px 0;
+  font-size: 18px;
+  color: orange;
+}
+
+.producto-botones {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-ver {
+  padding: 6px 12px;
+  border: none;
+  background: #3498db;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.iconos span {
+  margin: 0 4px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Responsive para tablets (2 columnas) */
+@media (min-width: 576px) {
+  .contenedor-productos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsive para escritorio (3 columnas) */
+@media (min-width: 992px) {
+  .contenedor-productos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.card-producto {
+  width: fit-content;
+  max-width: 100%;
+  margin: 16px;
+}
+
+.img-producto {
+  width: 7rem;
+  height: 8rem;
+  object-fit: contain;
+  box-shadow: inset 0px -4px 6px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+}
+
+.card-body {
+    height: 10rem;
+  width: 12rem;
+  border: none;
+}
+
+.precio {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.precio-actual {
+  color: #45586C;
+  font-weight: bold;
+}
+
+.precio-original {
+  color: gray;
+  text-decoration: line-through;
+}
+
+.estrellas i {
+  margin-right: 2px;
+  color: orange;
+}
+
+.acciones i {
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.carrito-icono{
+    width: 1.5rem;
+
+
+}
