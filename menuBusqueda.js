@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
       acciones.style.display = 'flex';
         // Opcional: actualizar los textos o enlaces si fueran dinámicos
       document.getElementById('comoLlegar').onclick = () => { window.open('Aquí la direccion de la pagina de waze'); };
-      document.getElementById('verCatalogo').onclick = () => { window.open('Aquí la dirección de la pagina de Catálogo'); };
+      document.getElementById('verCatalogo').onclick = () => { window.open('../html/catalogo.html')};
       });
 
       botonesContainer.appendChild(btn);
@@ -63,3 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
     input.value = '';
   });
 });
+
+
+

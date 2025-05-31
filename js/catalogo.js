@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", () => {
+
+document.addEventListener("DOMContentLoaded", () => { debugger
   const contenedor = document.getElementById("contenedor-productos");
   const productos = JSON.parse(localStorage.getItem("catalogo")) || [];
 
@@ -60,13 +61,13 @@ document.addEventListener("DOMContentLoaded", () => {
       // Guardar actualizado
       localStorage.setItem('carrito', JSON.stringify(carrito));
 
-      // Redirigir al carrito
+      // mostrar mensaje
+      mostrarMensaje("Producto agregado al carrito correctamente");
       
     });
 
     contenedor.appendChild(card);
   });
-
   function generarEstrellas(num) {
     const total = 5;
     let estrellas = '';
@@ -78,3 +79,18 @@ document.addEventListener("DOMContentLoaded", () => {
     return estrellas;
   }
 });
+
+
+function mostrarMensaje(texto) {
+  const overlay = document.getElementById("mensaje-overlay");
+  const toast = document.getElementById("mensaje-toast");
+
+  toast.textContent = texto;
+  overlay.classList.remove("oculto");
+
+  setTimeout(() => {
+    overlay.classList.add("oculto");
+  }, 2000); // Visible durante 2 segundos
+}
+
+
