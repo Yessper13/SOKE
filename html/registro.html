@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro</title>
+  <link rel="stylesheet" href="../header-footer/css/registro.css">
+</head>
+<body>
+
+  <form onsubmit="FuncionParaRegistro(event)" method="POST">
+  <h2>Registro de nueva cuenta</h2>
+
+  <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required><br>
+  <input type="email" id="correo" name="correo" placeholder="Correo electrónico" required><br>
+  <input type="text" id="usuario" name="usuario" placeholder="Nombre de usuario" required><br>
+  <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required><br>
+  <input type="password" id="confirmar" name="confirmar" placeholder="Confirmar contraseña" required><br>
+
+  <button type="submit">Registrar</button>
+  <p>Si ya tienes una cuenta <a href="login.html">Inicia Sesión</a></p>
+</form>
+
+<script src="../header-footer/js/registro.js"></script>
+
+</body>
+</html>
