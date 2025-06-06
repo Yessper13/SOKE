@@ -27,9 +27,12 @@ document.addEventListener("DOMContentLoaded", () => {
               <i class="bi bi-card-text fs-5"></i>
               <i class="bi bi-cart-plus fs-5"></i>
               <a href="#" class="agregar-al-carrito"><img src="../imagenes/carrito.png" alt="carrito" class="carrito-icono"></a>
+              <a href="#" onclick="eliminar(this)" class="agregar-al-carrito"><img src="../imagenes/delete.png" alt="carrito" class="carrito-icono"></a>
+
             </div>
           </div>
         </div>
+        <script src="../js/eliminarProducto.js"></script>
       `;
 
       card.querySelector('.agregar-al-carrito').addEventListener('click', function (e) {
