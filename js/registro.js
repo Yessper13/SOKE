@@ -1,5 +1,6 @@
 class Usuario {
-  constructor(nombre, correo, usuario, contrasena) {
+  constructor(tipoUsuario, nombre, correo, usuario, contrasena) {
+    this.tipoUsuario = tipoUsuario;
     this.nombre = nombre;
     this.correo = correo;
     this.usuario = usuario;
@@ -11,7 +12,7 @@ class Usuario {
 }
 function FuncionParaRegistro(event) {
   event.preventDefault();
-
+  const tipoUsuario = document.getElementById("tipoUsuario").value;
   const nombre = document.getElementById("nombre").value;
   const correo = document.getElementById("correo").value;
   const usuario = document.getElementById("usuario").value;
@@ -32,7 +33,7 @@ function FuncionParaRegistro(event) {
   }
 
   // Crear una instancia de la clase Usuario
-  const nuevoUsuario = new Usuario(nombre, correo, usuario, contrasena);
+  const nuevoUsuario = new Usuario(tipoUsuario,nombre, correo, usuario, contrasena);
 
   // Guardar el usuario en el objeto
   usuarios[usuario] = nuevoUsuario;

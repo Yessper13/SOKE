@@ -9,7 +9,10 @@
 
   <form onsubmit="FuncionParaRegistro(event)" method="POST">
   <h2>Registro de nueva cuenta</h2>
-
+  <select id="tipoUsuario" name="TipoUsuario">
+    <option value="motociclista">Motociclista</option>
+    <option value="distribuidor">Distribuidor</option>
+  </select>
   <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required><br>
   <input type="email" id="correo" name="correo" placeholder="Correo electrónico" required><br>
   <input type="text" id="usuario" name="usuario" placeholder="Nombre de usuario" required><br>

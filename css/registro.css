@@ -12,6 +12,23 @@
       min-height: 100vh;
       background-color: #f5f5f5;
     }
+    select {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #fff;
+}
+
+label {
+  display: block;
+  text-align: left;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
 
     form {
       background-color: #fff;
