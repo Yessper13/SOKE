@@ -7,8 +7,19 @@ class Usuario {
     this.contrasena = contrasena;
   }
 
-  // Puedes agregar métodos si lo necesitas, por ejemplo:
+  // Puedes agregar métodos si lo necesitas, por ejemplo obtener usuarios
+   static obtenerUsuarios() {
+    return JSON.parse(localStorage.getItem("usuarios")) || [];
+  }
+
+  // Método estático: verificar credenciales
   
+  static verificarCredenciales(usuario, contrasena) {
+    const usuariosObj = Usuario.obtenerUsuarios();
+    const usuarios = Object.values(usuariosObj); // Convertimos el objeto a array
+    return usuarios.find(u => u.usuario === usuario && u.contrasena === contrasena);
+  }
+
 }
 function FuncionParaRegistro(event) {
   event.preventDefault();
@@ -43,5 +54,5 @@ function FuncionParaRegistro(event) {
 
   alert("Usuario registrado correctamente");
 
-  // window.location.href = "login.html";
+   window.location.href = "IniciarSesion.html";
 }

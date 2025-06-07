@@ -10,17 +10,18 @@
   <div class="container">
     <h2>Bienvenido a SOKE</h2>
     <h3>Inicia sesión para continuar</h3>
-    <form id="login-form">
+    <form id="login-form"  onsubmit="iniciarSesion(event)">
       <div class="form-group">
         <input type="text" id="username" name="username" placeholder="jdoe@gmail.com" required>
       </div>
       <div class="form-group">
         <input type="password" id="password" name="password" placeholder="Contraseña" required>
       </div>
-      <button type="submit">Iniciar Sesión</button>
+      <button type="submit" >Iniciar Sesión</button>
       <br>
-      <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+      <p id="message"></p>
     </form>
+    <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
     <div class="divider"><span>O también puedes</span></div>
     <div class="social-login">
       <button type="button" class="google-login">
@@ -37,8 +38,10 @@
     <p class="register-message">
       Crear una <a href="../html/registro.html" class="register-link">nueva cuenta</a>
     </p>
-    <p id="error-message" class="error"></p>
   </div>
-  <script src="../js/login.js"></script>
+  <script src="../js/iniciarSesion.js"></script>
+  <script src="../js/registro.js"></script>
+  <script src="../js/mostrarMensaje.js"></script>
+
 </body>
 </html>
