@@ -4,5 +4,12 @@ function eliminar(boton) {
     if (card) {
         card.remove();
         mostrarMensaje("Producto eliminado");
+        function home() {
+  // Redirigir a la página principal
+  window.location.href = "index.html";  // Cambia "index.html" por la URL que necesites
+}
+
+
+
     }
 }

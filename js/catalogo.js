@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   const contenedor = document.getElementById("contenedor-productos");
   const inputBusqueda = document.getElementById("busqueda-producto");
-  const productos = JSON.parse(localStorage.getItem("catalogo")) || [];
+  let productos = JSON.parse(localStorage.getItem("catalogo")) || [];
 
   function mostrarProductos(lista) {
-    contenedor.innerHTML = ""; // Limpiar antes de renderizar
+    contenedor.innerHTML = ""; 
 
     lista.forEach(producto => {
       const card = document.createElement("div");
@@ -27,14 +27,13 @@ document.addEventListener("DOMContentLoaded", () => {
               <i class="bi bi-card-text fs-5"></i>
               <i class="bi bi-cart-plus fs-5"></i>
               <a href="#" class="agregar-al-carrito"><img src="../imagenes/carrito.png" alt="carrito" class="carrito-icono"></a>
-             <a href="#" class="btn-eliminar-producto"><img src="../imagenes/delete.png" alt="eliminar" class="carrito-icono"></a>
-
+              <a href="#" class="btn-eliminar-producto"><img src="../imagenes/delete.png" alt="eliminar" class="carrito-icono"></a>
             </div>
           </div>
         </div>
-        <script src="../js/eliminarProducto.js"></script>
       `;
 
+      
       card.querySelector('.agregar-al-carrito').addEventListener('click', function (e) {
         e.preventDefault();
 
@@ -64,6 +63,23 @@ document.addEventListener("DOMContentLoaded", () => {
         mostrarMensaje("Producto agregado al carrito");
       });
 
+      
+      card.querySelector('.btn-eliminar-producto').addEventListener('click', function (e) {
+        e.preventDefault();
+
+        if (!confirm(`¿Estás seguro de eliminar "${producto.nombre}"?`)) return;
+
+        productos = productos.filter(p =>
+          !(p.nombre === producto.nombre &&
+            p.marca === producto.marca &&
+            p.imagen === producto.imagen)
+        );
+
+        localStorage.setItem("catalogo", JSON.stringify(productos));
+        mostrarProductos(productos);
+        mostrarMensaje("Producto eliminado del catálogo");
+      });
+
       contenedor.appendChild(card);
     });
   }
@@ -79,19 +95,16 @@ document.addEventListener("DOMContentLoaded", () => {
     return estrellas;
   }
 
-  // Función de filtrado por búsqueda
+ 
   inputBusqueda.addEventListener("input", function () {
     const texto = this.value.toLowerCase();
-
     const filtrados = productos.filter(p =>
       p.nombre.toLowerCase().includes(texto) ||
       p.marca.toLowerCase().includes(texto)
     );
-
     mostrarProductos(filtrados);
   });
 
- // Mostrar todos al cargar
   mostrarProductos(productos);
 
 
@@ -106,7 +119,5 @@ document.addEventListener("DOMContentLoaded", () => {
       overlay.classList.add("oculto");
     }, 2000);
   }
-
 });
-
 
