@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Page</title>
+  <link rel="stylesheet" href="../css/iniciarSesion.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Bienvenido a SOKE</h2>
+    <h3>Inicia sesión para continuar</h3>
+    <form id="login-form">
+      <div class="form-group">
+        <input type="text" id="username" name="username" placeholder="jdoe@gmail.com" required>
+      </div>
+      <div class="form-group">
+        <input type="password" id="password" name="password" placeholder="Contraseña" required>
+      </div>
+      <button type="submit">Iniciar Sesión</button>
+      <br>
+      <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+    </form>
+    <div class="divider"><span>O también puedes</span></div>
+    <div class="social-login">
+      <button type="button" class="google-login">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google" class="icon">
+        Iniciar sesión con Google
+      </button>
+      <button type="button" class="apple-login">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" alt="Apple" class="icon">
+        Iniciar sesión con Apple
+      </button>
+    </div>
+    <div class="divider"><span>Incluso hasta</span></div>
+    <br>
+    <p class="register-message">
+      Crear una <a href="#" class="register-link">nueva cuenta</a>
+    </p>
+    <p id="error-message" class="error"></p>
+  </div>
+  <script src="../js/login.js"></script>
+</body>
+</html>
