@@ -43,10 +43,7 @@ function renderCart() {
   });
 
   totalDisplay.textContent = total.toFixed(2);
-<<<<<<< HEAD
   localStorage.setItem('totalCarrito', total.toFixed(2));
-=======
->>>>>>> Joya
 }
 
 function changeQuantity(index, delta) {

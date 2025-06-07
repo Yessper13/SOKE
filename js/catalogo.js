@@ -1,17 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   const contenedor = document.getElementById("contenedor-productos");
   const inputBusqueda = document.getElementById("busqueda-producto");
-<<<<<<< HEAD
   let productos = JSON.parse(localStorage.getItem("catalogo")) || [];
 
   function mostrarProductos(lista) {
     contenedor.innerHTML = ""; 
-=======
-  const productos = JSON.parse(localStorage.getItem("catalogo")) || [];
-
-  function mostrarProductos(lista) {
-    contenedor.innerHTML = ""; // Limpiar antes de renderizar
->>>>>>> Joya
 
     lista.forEach(producto => {
       const card = document.createElement("div");
@@ -34,19 +27,13 @@ document.addEventListener("DOMContentLoaded", () => {
               <i class="bi bi-card-text fs-5"></i>
               <i class="bi bi-cart-plus fs-5"></i>
               <a href="#" class="agregar-al-carrito"><img src="../imagenes/carrito.png" alt="carrito" class="carrito-icono"></a>
-<<<<<<< HEAD
               <a href="#" class="btn-eliminar-producto"><img src="../imagenes/delete.png" alt="eliminar" class="carrito-icono"></a>
-=======
->>>>>>> Joya
             </div>
           </div>
         </div>
       `;
 
-<<<<<<< HEAD
       
-=======
->>>>>>> Joya
       card.querySelector('.agregar-al-carrito').addEventListener('click', function (e) {
         e.preventDefault();
 
@@ -76,7 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
         mostrarMensaje("Producto agregado al carrito");
       });
 
-<<<<<<< HEAD
       
       card.querySelector('.btn-eliminar-producto').addEventListener('click', function (e) {
         e.preventDefault();
@@ -94,8 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
         mostrarMensaje("Producto eliminado del catálogo");
       });
 
-=======
->>>>>>> Joya
       contenedor.appendChild(card);
     });
   }
@@ -111,31 +95,16 @@ document.addEventListener("DOMContentLoaded", () => {
     return estrellas;
   }
 
-<<<<<<< HEAD
  
   inputBusqueda.addEventListener("input", function () {
     const texto = this.value.toLowerCase();
-=======
-  // Función de filtrado por búsqueda
-  inputBusqueda.addEventListener("input", function () {
-    const texto = this.value.toLowerCase();
-
->>>>>>> Joya
     const filtrados = productos.filter(p =>
       p.nombre.toLowerCase().includes(texto) ||
       p.marca.toLowerCase().includes(texto)
     );
-<<<<<<< HEAD
     mostrarProductos(filtrados);
   });
 
-=======
-
-    mostrarProductos(filtrados);
-  });
-
- // Mostrar todos al cargar
->>>>>>> Joya
   mostrarProductos(productos);
 
 
@@ -148,16 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(() => {
       overlay.classList.add("oculto");
-<<<<<<< HEAD
     }, 200);
   }
 });
 
-=======
-    }, 2000);
-  }
-
-});
-
-
->>>>>>> Joya

@@ -52,11 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const acciones = document.getElementById('accionesImagen');
       acciones.style.display = 'flex';
         // Opcional: actualizar los textos o enlaces si fueran dinámicos
-<<<<<<< HEAD
       document.getElementById('comoLlegar').onclick = () =>  comoLlegar(nombre);
-=======
-      document.getElementById('comoLlegar').onclick = () => { window.open('Aquí la direccion de la pagina de waze'); };
->>>>>>> Joya
       document.getElementById('verCatalogo').onclick = () => { window.open('../html/catalogo.html')};
       });
 
