@@ -43,6 +43,7 @@ function renderCart() {
   });
 
   totalDisplay.textContent = total.toFixed(2);
+  localStorage.setItem('totalCarrito', total.toFixed(2));
 }
 
 function changeQuantity(index, delta) {

@@ -1,0 +1,284 @@
+.metodos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 10vh auto;
+}
+
+.boton-pago {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 15px;
+    padding: 15px 20px;
+    width: 160px;
+    height: 120px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.boton-pago:hover {
+    transform: scale(1.05);
+}
+
+.boton-pago img {
+    background-color: rgb(241, 18, 18);
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-bottom: 10px;
+    border-radius: 15%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.boton-pago span {
+    color: #000;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.nota {
+    font-size: 14px;
+    color: #333;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* ============================= */
+/* Estilos para la “tarjeta-pago” */
+/* ============================= */
+
+#tarjeta-pago {
+  width: 320px;
+  max-width: 100%;
+  margin: 10vh auto;                /* Mismo margen que .metodos */
+  padding: 20px 16px 24px 16px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  display: none;                     /* Se muestra solo al hacer clic */
+  position: relative;                /* Para ubicar el botón Volver */
+}
+
+/* Botón “← Volver” */
+.boton-volver {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: transparent;
+  border: none;
+  color: #555555;
+  font-size: 0.9rem;                 /* ~14px */
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+.boton-volver:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Icono del método de pago dentro de la tarjeta */
+#icono-metodo {
+  width: 56px;
+  height: 56px;
+  background-color: #ff6b35;         /* Naranja fuerte */
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 28px auto 12px;           /* Separación mayor arriba para no chocar con “Volver” */
+}
+
+#icono-metodo img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: invert(100%);              /* Invierte icono negro a blanco */
+  /* Si tu icono ya es blanco, comenta o elimina esta línea */
+}
+
+/* Título del método dentro de la tarjeta */
+#titulo-metodo {
+  font-size: 1.25rem;                /* ~20px */
+  margin: 0 0 8px 0;
+  color: #333333;
+  font-weight: 600;
+}
+
+/* Texto explicativo debajo del título */
+#tarjeta-pago p {
+  font-size: 0.875rem;               /* ~14px */
+  color: #555555;
+  line-height: 1.4;
+  margin: 0 0 20px 0;
+}
+
+/* ============================= */
+/* Estilos para los inputs       */
+/* ============================= */
+#tarjeta-pago input {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 6px 0;                     /* Separación vertical entre inputs */
+  padding: 10px 12px;
+  font-size: 0.9rem;                 /* ~14px */
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  color: #333333;
+}
+
+/* Placeholder más tenue */
+#tarjeta-pago input::placeholder {
+  color: #999999;
+}
+
+/* Input “Total” con estilo diferenciado */
+#total-pagar {
+  background-color: #ffdada;         /* Rosado muy claro */
+  font-weight: 600;
+  text-align: center;
+  border: 1px solid #ffb9b9;         /* Rosa tenue más oscuro */
+  margin-top: 12px;                  /* Separación extra arriba */
+}
+
+/* ============================= */
+/* Estilo para el botón “Confirma” */
+/* ============================= */
+#btn-confirmar {
+  width: 100%;
+  padding: 12px 0;
+  margin-top: 18px;
+  background-color: #ff6b35;         /* Naranja fuerte */
+  color: #ffffff;
+  font-size: 1rem;                   /* ~16px */
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#btn-confirmar:hover {
+  background-color: #e95a24;         /* Naranja un poco más oscuro */
+}
+
+/* ============================= */
+/* Ajustes responsivos (añade dentro de tu @media actual) */
+/* ============================= */
+@media (max-width: 480px) {
+  /* Reducir ancho y padding de la tarjeta */
+  #tarjeta-pago {
+    width: 90%;
+    padding: 16px 12px 20px 12px;
+    margin: 8vh auto;
+  }
+
+  /* Botón “Volver” más compacto */
+  .boton-volver {
+    top: 8px;
+    left: 8px;
+    font-size: 0.85rem; /* ~13px */
+    padding: 3px 6px;
+  }
+
+  /* Reducir icono */
+  #icono-metodo {
+    width: 48px;
+    height: 48px;
+    margin: 24px auto 12px;
+  }
+  #icono-metodo img {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Reducir títulos y textos */
+  #titulo-metodo {
+    font-size: 1.125rem;             /* ~18px */
+  }
+  #tarjeta-pago p {
+    font-size: 0.825rem;             /* ~13px */
+  }
+
+  /* Inputs ligeramente más pequeños */
+  #tarjeta-pago input {
+    padding: 8px 10px;
+    font-size: 0.85rem;              /* ~13px */
+  }
+
+  /* Botón más compacto */
+  #btn-confirmar {
+    padding: 10px 0;
+    font-size: 0.95rem;              /* ~15px */
+  }
+}
+
+
+
+
+@media (max-width: 480px) {
+    .main {
+        padding: 10px;
+    }
+
+    .boton-pago {
+        width: 140px;
+        height: 110px;
+        padding: 10px;
+    }
+
+    .boton-pago img {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .boton-pago span {
+        font-size: 0.9rem;
+    }
+
+    .nota {
+        font-size: 13px;
+    }
+    #tarjeta-pago {
+    width: 90%;
+    padding: 16px 12px 20px 12px;
+    margin: 8vh auto;                /* Ajustar margen vertical en móvil */
+  }
+
+  /* Reducir icono */
+  #icono-metodo {
+    width: 48px;
+    height: 48px;
+  }
+  #icono-metodo img {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Reducir títulos y textos */
+  #titulo-metodo {
+    font-size: 1.125rem;             /* ~18px */
+  }
+  #tarjeta-pago p {
+    font-size: 0.825rem;             /* ~13px */
+  }
+
+  /* Inputs ligeramente más pequeños */
+  #tarjeta-pago input {
+    padding: 8px 10px;
+    font-size: 0.85rem;              /* ~13px */
+  }
+
+  /* Botón más compacto */
+  #btn-confirmar {
+    padding: 10px 0;
+    font-size: 0.95rem;              /* ~15px */
+  }
+}
