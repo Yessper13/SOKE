@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     background-color: #f4f4f4;
     display: flex;
     justify-content: center;
@@ -9,30 +9,43 @@ body {
 }
 
 .container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
+    background-color: #fff;
+    padding: 32px 28px;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    width: 100%;
+    max-width: 400px;
 }
 
-h2 {
+h2, h3 {
     text-align: center;
     color: #333;
+    margin-bottom: 8px;
 }
 
 h3 {
-    text-align: center;
-    color: #333;
+    font-weight: 400;
+    font-size: 1.1em;
+    color: #666;
 }
 
-input[type="text"],
-input[type="password"] {
-    width: 90%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.form-group {
+    margin-bottom: 18px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1em;
+    background: #fafafa;
+    transition: border 0.2s;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border: 1.5px solid #f97316;
+    outline: none;
 }
 
 input::placeholder {
@@ -40,43 +53,32 @@ input::placeholder {
     opacity: 1;
 }
 
-button {
-    width: 50%;
-    padding: 10px;
-    background-color: #f97316;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    align-items: center;
-}
-
-button:hover {
-    background-color: #f97316;
-}
-
-.error {
-    color: red;
-    font-size: 0.9em;
-    text-align: center;
-}
-
-/* Centrar el botón dentro del formulario */
-form {
-    display: flex;
-    flex-direction: column;
-}
-form button {
+button[type="submit"] {
     width: 100%;
+    padding: 12px;
+    background-color: #f97316;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(249, 115, 22, 0.10);
+}
+
+button[type="submit"]:hover {
+    background-color: #c2410c;
 }
 
 .forgot-password {
     display: block;
-    margin-top: 10px;
+    margin: 12px 0 0 0;
     text-align: center;
     color: #f97316;
     text-decoration: none;
-    font-size: 0.95em;
+    font-size: 0.98em;
     transition: color 0.2s;
 }
 .forgot-password:hover {
@@ -88,7 +90,7 @@ form button {
     display: flex;
     align-items: center;
     text-align: center;
-    margin: 18px 0 0 0;
+    margin: 22px 0 0 0;
     color: #bdbdbd;
     font-size: 0.98em;
 }
@@ -115,21 +117,23 @@ form button {
 }
 
 .social-login button {
+    width: 90%;
+    max-width: 320px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    padding: 10px;
+    padding: 12px;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     font-size: 1em;
     cursor: pointer;
     transition: background 0.2s;
-    width: 90%;
+    font-weight: 500;
 }
 
 .google-login {
-    background: #ffffffe5;
+    background: #fff;
     color: #333;
     border: 1px solid #ccc;
 }
@@ -139,7 +143,7 @@ form button {
 }
 
 .apple-login {
-    background: #ffffffe5;
+    background: #fff;
     color: #333;
 }
 
@@ -148,13 +152,13 @@ form button {
 }
 
 .icon {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
 }
 
 .register-message {
     text-align: center;
-    margin-top: 16px;
+    margin-top: 18px;
     font-size: 1em;
 }
 .register-link {
@@ -166,4 +170,11 @@ form button {
 .register-link:hover {
     color: #c2410c;
     text-decoration: underline;
+}
+
+#error-message, #message {
+    color: #c2410c;
+    text-align: center;
+    margin-top: 8px;
+    font-size: 0.98em;
 }
