@@ -1,0 +1,165 @@
+/* perfil.css */
+
+/* Colores base */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --accent-color: #e67e22;
+    --background-color: #f4f4f4;
+    --text-color: #222;
+    --card-bg: #fff;
+    --border-radius: 10px;
+    --shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor principal del perfil */
+.perfil-container {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    padding: 32px 28px;
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+/* Header del perfil */
+.perfil-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f97316;
+    border-radius: 12px;
+    padding: 24px 18px 18px 18px;
+    color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(249, 115, 22, 0.10);
+    gap: 16px;
+}
+
+/* Foto del perfil en el header */
+.perfil-foto {
+    border-radius: 50%;
+    border: 3px solid #fff;
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Estadísticas del perfil */
+.perfil-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Nombre de usuario */
+.perfil-nombre {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f97316;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* Información adicional en el header */
+.perfil-info > div {
+    margin-bottom: 6px;
+    font-size: 1.05em;
+}
+
+/* Información adicional */
+.perfil-info {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Detalles de usuario (dirección, teléfono, correo, cédula) */
+.perfil-detalles {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.perfil-detalles-item {
+    background: #fff7ed;
+    border-left: 4px solid #f97316;
+    border-radius: 6px;
+    padding: 10px 16px;
+    color: #333;
+    font-size: 1.05em;
+    box-shadow: 0 1px 4px rgba(249, 115, 22, 0.07);
+}
+
+/* Botones de cerrar sesión y otras acciones */
+.perfil-botones {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 18px;
+}
+
+.cerrar-sesion-btn {
+    background: #fff;
+    color: #f97316;
+    border: 2px solid #f97316;
+}
+
+.cerrar-sesion-btn:hover {
+    background: #f97316;
+    color: #fff;
+}
+
+/* Botón de editar perfil más grande y naranja */
+.perfil-editar-btn {
+    background: #f97316;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 36px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.perfil-editar-btn:hover {
+    background: #c2410c;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .perfil-container {
+        padding: 20px 8px;
+    }
+    .perfil-nombre {
+        font-size: 1.4rem;
+    }
+}

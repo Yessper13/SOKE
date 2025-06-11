@@ -56,3 +56,45 @@ function FuncionParaRegistro(event) {
 
    window.location.href = "IniciarSesion.html";
 }
+function registrarUsuario(event) {
+    event.preventDefault();
+    const tipoUsuario = document.getElementById("tipoUsuario").value;
+    const nombre = document.getElementById("nombre").value;
+    const correo = document.getElementById("correo").value;
+    const usuario = document.getElementById("usuario").value;
+    const contrasena = document.getElementById("contrasena").value;
+    const confirmar = document.getElementById("confirmar").value;
+
+    if (contrasena !== confirmar) {
+        alert("Las contraseñas no coinciden.");
+        return;
+    }
+
+    // Obtener usuarios existentes como array
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    // Verificar si el usuario o correo ya existen
+    if (usuarios.some(u => u.usuario === usuario)) {
+        alert("El nombre de usuario ya está registrado.");
+        return;
+    }
+    if (usuarios.some(u => u.correo === correo)) {
+        alert("El correo ya está registrado.");
+        return;
+    }
+
+    // Crear el usuario con tipo
+    const nuevoUsuario = {
+        tipoUsuario,
+        nombre,
+        correo,
+        usuario,
+        contrasena
+    };
+
+    usuarios.push(nuevoUsuario);
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+    alert("Usuario registrado correctamente");
+    window.location.href = "IniciarSesion.html";
+}
