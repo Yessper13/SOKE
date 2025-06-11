@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Recuperar Contraseña</title>
+  <link rel="stylesheet" href="../css/recuperarPwd.css">
+</head>
+<body>
+  <form id="form">
+    <h2>Recuperar contraseña</h2>
+    <input type="email" id="email" placeholder="Ingresa tu correo" required><br>
+    <button type="submit" onsubmit="enviarCodigo()">Enviar código</button>
+    <p>¿Recuerdas tu contraseña? <a href="../html/IniciarSesion.html">Inicia Sesión</a></p>
+    <input type="text" id="codigo_ingresado" placeholder="Escribe el código">
+    <button type="button" onclick="verificarCodigo()">Verificar</button>
+    <input type="password" id="nueva_contrasena" placeholder="Nueva contraseña" style="display:none;" >
+    <input type="password" id="confirmar_contrasena" placeholder="Confirmar contraseña" style="display:none;" >
+    <button type="button" id="btn-cambiar-contrasena" style="display:none;" onclick="cambiarContrasena()">Cambiar contraseña</button>
+    <p id="mensaje_cambio"></p>
+  </form>
+
+
+  <script src="../js/recuperarPwd.js"></script>
+  <script src="../js/registro.js"></script>
+    <script src="../js/iniciarSesion.js"></script>
+  
+</body>
+</html>

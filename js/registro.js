@@ -17,7 +17,18 @@ class Usuario {
   static verificarCredenciales(usuario, contrasena) {
     const usuariosObj = Usuario.obtenerUsuarios();
     const usuarios = Object.values(usuariosObj); // Convertimos el objeto a array
-    return usuarios.find(u => u.usuario === usuario && u.contrasena === contrasena);
+    // Buscar el usuario que coincida
+    const usuarioEncontrado = usuarios.find(u => u.usuario === usuario && u.contrasena === contrasena);
+    if (usuarioEncontrado) {
+      // Retornar el objeto completo con todos los atributos
+      return usuarioEncontrado;
+    }
+    return null;
+  }
+
+  // Método estático para obtener el usuario en sesión
+  static obtenerUsuarioSesion() {
+    return JSON.parse(localStorage.getItem('usuarioSesion'));
   }
 
 }
