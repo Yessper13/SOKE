@@ -79,6 +79,7 @@
   padding: 40px 0;
   border-top: 1px solid #ddd;
   box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+  
 }
 .footer h5 {
   font-weight: bold;
@@ -96,7 +97,9 @@ html, body {
 main {
   flex: 1;
 }
-
+.tipo_usuario {
+  width: 5rem;
+}
 
 /* Espaciado entre íconos sociales en pantallas pequeñas */
 @media (max-width: 576px) {

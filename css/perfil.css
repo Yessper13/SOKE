@@ -20,13 +20,10 @@
 }
 
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: #f4f4f4;
-    margin: 0;
     min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    background: var(--background-color);
 }
 
 /* Contenedor principal del perfil */
@@ -152,6 +149,22 @@ body {
 
 .perfil-editar-btn:hover {
     background: #c2410c;
+}
+
+/* Estructura de página para centrar main y mantener footer abajo */
+main.perfil-container {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3rem auto; /* Centra horizontalmente */
+    justify-content: flex-start; /* Quita el centrado vertical */
+}
+
+/* Asegura que el footer ocupe su tamaño natural y esté abajo */
+.footer {
+    width: 100%;
+    flex-shrink: 0;
 }
 
 /* Responsive */
