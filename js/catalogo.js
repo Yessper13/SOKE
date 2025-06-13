@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="producto-botones mt-2 acciones">
               <i class="bi bi-card-text fs-5"></i>
               <i class="bi bi-cart-plus fs-5"></i>
-              <a href="#" class="agregar-al-carrito"><img src="../imagenes/carrito.png" alt="carrito" class="carrito-icono"></a>
-              <a href="#" class="btn-eliminar-producto"><img src="../imagenes/delete.png" alt="eliminar" class="carrito-icono"></a>
+              <a href="#" class="agregar-al-carrito nav-motociclista"><img src="../imagenes/carrito.png" alt="carrito" class="carrito-icono"></a>
+              <a href="#" class="btn-eliminar-producto nav-distribuidor"><img src="../imagenes/delete.png" alt="eliminar" class="carrito-icono"></a>
             </div>
           </div>
         </div>
