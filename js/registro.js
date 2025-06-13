@@ -1,8 +1,11 @@
 class Usuario {
-  constructor(tipoUsuario, nombre, correo, usuario, contrasena) {
+  constructor(tipoUsuario, nombre, correo, cedula, direccion, telefono, usuario, contrasena) {
     this.tipoUsuario = tipoUsuario;
     this.nombre = nombre;
     this.correo = correo;
+    this.cedula = cedula;
+    this.direccion = direccion;
+    this.telefono = telefono;
     this.usuario = usuario;
     this.contrasena = contrasena;
   }
@@ -72,6 +75,9 @@ function registrarUsuario(event) {
     const tipoUsuario = document.getElementById("tipoUsuario").value;
     const nombre = document.getElementById("nombre").value;
     const correo = document.getElementById("correo").value;
+    const cedula = document.getElementById("cedula").value;
+    const direccion = document.getElementById("direccion").value;
+    const telefono = document.getElementById("telefono").value;
     const usuario = document.getElementById("usuario").value;
     const contrasena = document.getElementById("contrasena").value;
     const confirmar = document.getElementById("confirmar").value;
@@ -81,10 +87,8 @@ function registrarUsuario(event) {
         return;
     }
 
-    // Obtener usuarios existentes como array
     let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-    // Verificar si el usuario o correo ya existen
     if (usuarios.some(u => u.usuario === usuario)) {
         alert("El nombre de usuario ya está registrado.");
         return;
@@ -93,12 +97,19 @@ function registrarUsuario(event) {
         alert("El correo ya está registrado.");
         return;
     }
+    if (usuarios.some(u => u.cedula === cedula)) {
+        alert("La cédula ya está registrada.");
+        return;
+    }
 
-    // Crear el usuario con tipo
+    // Crear el usuario con los nuevos campos
     const nuevoUsuario = {
         tipoUsuario,
         nombre,
         correo,
+        cedula,
+        direccion,
+        telefono,
         usuario,
         contrasena
     };
