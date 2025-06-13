@@ -54,6 +54,26 @@ function changeQuantity(index, delta) {
 }
 
 document.getElementById("checkout-btn").addEventListener("click", () => {
+  // Obtener usuario activo
+  const usuario = JSON.parse(localStorage.getItem('usuarioActivo')) || { nombre: "Invitado" };
+
+  // Crear pedido
+  const pedido = {
+    nombre: usuario.nombre,
+    productos: cartItems.map(item => ({
+      nombre: item.nombre,
+      cantidad: item.cantidad,
+      valor: item.valor
+    })),
+    total: cartItems.reduce((acc, item) => acc + item.valor * item.cantidad, 0),
+    fecha: new Date().toISOString()
+  };
+
+  // Guardar pedido en localStorage
+  let pedidos = JSON.parse(localStorage.getItem('pedidos')) || [];
+  pedidos.push(pedido);
+  localStorage.setItem('pedidos', JSON.stringify(pedidos));
+
   alert("Gracias por tu compra. Pedido realizado.");
   localStorage.removeItem('carrito');
   cartItems = [];
