@@ -5,14 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const botonesContainer = document.getElementById('botonesMapa');
 
   // Imagen que aparece al hacer la búsqueda (puedes cambiar la URL)
-  const imagenBusqueda = './Map/mapafind.png';
+  const imagenBusqueda = '../Map/mapafind.png';
 
   // Imágenes para cada botón (cambia los src por tus imágenes)
   const imagenesBotones = {
-    'K lond tapizados la bayadera': './Distribuidores/klond-logo.webp',
-    'Cordobles': './Distribuidores/cordoblez.png',
-    'Atmopel Bayadera': './Distribuidores/Atmopel.jpg',
-    'Mundimotos la bayadera': './Distribuidores/Mundimotos.jpg',
+    'K lond tapizados la bayadera': '../Distribuidores/klond-logo.webp',
+    'Cordobles': '../Distribuidores/cordoblez.png',
+    'Atmopel Bayadera': '../Distribuidores/Atmopel.jpg',
+    'Mundimotos la bayadera': '../Distribuidores/Mundimotos.jpg',
   };
 
   form.addEventListener('submit', (e) => {

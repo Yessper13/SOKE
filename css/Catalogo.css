@@ -151,7 +151,7 @@
 /* Fondo semitransparente */
 .mensaje-overlay {
   position: fixed;
-  top: 0;
+  top: -35%;
   left: 0;
   width: 100vw;
   height: 100vh;
@@ -176,7 +176,7 @@
 
 /* Oculto por defecto */
 .oculto {
-  display: none;
+  display:none ;
 }
 
 

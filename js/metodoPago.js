@@ -47,16 +47,30 @@ document.getElementById("btn-confirmar").addEventListener("click", function (e) 
   const cedula = document.getElementById("cedula").value;
 
   if (!correo || !nombre || !cedula) {
-    alert("Por favor completa todos los campos.");
+    mostrarMensaje("Por favor completa todos los campos.");
     return;
   }
 
-  alert("¡Gracias por tu compra! La factura será enviada a tu correo.");
+  mostrarMensaje("¡Gracias por tu compra! La factura será enviada a tu correo.");
 
   // Limpiar carrito solo al confirmar
   localStorage.removeItem('carrito');
   localStorage.removeItem('totalCarrito');
 
   // Redireccionar si lo deseas
-  window.location.href = "../html/productoSeparado.html";
+  window.location.href = "../html/paginadepedidos.html";
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const usuario = JSON.parse(localStorage.getItem('usuarioActivo'));
+  if (usuario) {
+    const correoInput = document.getElementById("correo");
+    const nombreInput = document.getElementById("nombre");
+    const cedulaInput = document.getElementById("cedula");
+    if (correoInput && usuario.correo) correoInput.value = usuario.correo;
+    if (nombreInput && usuario.nombre) nombreInput.value = usuario.nombre;
+    if (cedulaInput && usuario.cedula) cedulaInput.value = usuario.cedula;
+  }
+});
+
+//

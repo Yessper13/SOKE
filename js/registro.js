@@ -45,7 +45,7 @@ function FuncionParaRegistro(event) {
   const confirmar = document.getElementById("confirmar").value;
 
   if (contrasena !== confirmar) {
-    alert("Las contraseñas no coinciden.");
+    mostrarMensaje("Las contraseñas no coinciden.");
     return;
   }
 
@@ -53,7 +53,7 @@ function FuncionParaRegistro(event) {
   let usuarios = JSON.parse(localStorage.getItem("usuarios")) || {};
 
   if (usuarios[usuario]) {
-    alert("El nombre de usuario ya está registrado.");
+    mostrarMensaje("El nombre de usuario ya está registrado.");
     return;
   }
 
@@ -66,7 +66,7 @@ function FuncionParaRegistro(event) {
   // Guardar el objeto completo en localStorage
   localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
-  alert("Usuario registrado correctamente");
+  mostrarMensaje("Usuario registrado correctamente");
 
    window.location.href = "IniciarSesion.html";
 }
@@ -83,22 +83,22 @@ function registrarUsuario(event) {
     const confirmar = document.getElementById("confirmar").value;
 
     if (contrasena !== confirmar) {
-        alert("Las contraseñas no coinciden.");
+        mostrarMensaje("Las contraseñas no coinciden.");
         return;
     }
 
     let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
     if (usuarios.some(u => u.usuario === usuario)) {
-        alert("El nombre de usuario ya está registrado.");
+        mostrarMensaje("El nombre de usuario ya está registrado.");
         return;
     }
     if (usuarios.some(u => u.correo === correo)) {
-        alert("El correo ya está registrado.");
+        mostrarMensaje("El correo ya está registrado.");
         return;
     }
     if (usuarios.some(u => u.cedula === cedula)) {
-        alert("La cédula ya está registrada.");
+        mostrarMensaje("La cédula ya está registrada.");
         return;
     }
 
@@ -117,6 +117,8 @@ function registrarUsuario(event) {
     usuarios.push(nuevoUsuario);
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
-    alert("Usuario registrado correctamente");
+    mostrarMensaje("Usuario registrado correctamente");
     window.location.href = "IniciarSesion.html";
 }
+
+

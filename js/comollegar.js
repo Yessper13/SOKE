@@ -1,5 +1,5 @@
 function comoLlegar(nombre) {
-    alert(`Cómo llegar a ${nombre}`);
+  mostrarMensaje(`Cómo llegar a ${nombre}`);
   const coordenadas = {
     'K lond tapizados la bayadera': '6.240498877039471, -75.57447071703986', 
     'Cordobles': '6.240323014867005, -75.57391534016435',
@@ -12,6 +12,6 @@ function comoLlegar(nombre) {
     const url = `https://www.google.com/maps/dir/?api=1&destination=${destino}`;
     window.open(url, '_blank');
   } else {
-    alert('No se encontraron coordenadas para este aliado.');
+    mostrarMensaje('No se encontraron coordenadas para este aliado.');
   }
 }

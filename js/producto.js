@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const marca = document.getElementById("marca").value.trim();
 
     if (!nombre || !valor || !marca) {
-      alert("Por favor, completa todos los campos.");
+      mostrarMensaje("Por favor, completa todos los campos.");
       return;
     }
 
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     imagenBase64 = "";
     document.getElementById("previewImage").src = "../imagenes/imagen.png";
 
-    alert("Producto agregado al catálogo.");
+    mostrarMensaje("Producto agregado al catálogo.");
     /* window.location.href = "catalogo.html"; */
   });
 });

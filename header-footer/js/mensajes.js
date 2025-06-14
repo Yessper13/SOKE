@@ -1,23 +1,21 @@
 function mostrarMensaje(texto) {
-    alert(mostrarMensaje)
-  const popup = document.getElementById("mensaje-popup");
-  const mensajeTexto = document.getElementById("mensaje-texto");
-  if (popup && mensajeTexto) {
-    mensajeTexto.textContent = texto;
-    popup.classList.remove("oculto");
-  }
+    let contenedor = document.querySelector('.mensaje');
+    if (!contenedor) return;
+
+    contenedor.innerHTML = `
+        <div class="mensaje-popup">
+            <div class="mensaje-contenido">
+                <p>${texto}</p>
+                <button id="mensaje-aceptar">Aceptar</button>
+            </div>
+        </div>
+    `;
+    contenedor.classList.remove('oculto');
+
+    document.getElementById('mensaje-aceptar').onclick = function() {
+        contenedor.classList.add('oculto');
+        contenedor.innerHTML = '';
+    };
 }
 
-function ocultarMensaje() {
-  const popup = document.getElementById("mensaje-popup");
-  if (popup) {
-    popup.classList.add("oculto");
-  }
-}
 
-document.addEventListener("DOMContentLoaded", () => {
-  const aceptarBtn = document.getElementById("mensaje-aceptar");
-  if (aceptarBtn) {
-    aceptarBtn.addEventListener("click", ocultarMensaje);
-  }
-});
