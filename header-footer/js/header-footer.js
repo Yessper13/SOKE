@@ -53,4 +53,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Espera a que el header esté cargado antes de clonar el menú
     setTimeout(clonarMenu, 100);
+
+    // Botón cerrar sesión del header
+    document.querySelectorAll('a.nav-link[href="../index.html"], a.nav-link[href="./index.html"]').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            localStorage.removeItem("usuarioActivo");
+            window.location.href = "../html/IniciarSesion.html";
+        });
+    });
 });
