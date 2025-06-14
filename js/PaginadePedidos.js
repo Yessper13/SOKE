@@ -102,15 +102,25 @@ function tiempoTranscurrido(fechaISO) {
   return `Hace ${minutos} minutos`;
 }
 
-// Al crear el pedido...
-const pedido = {
-  nombre: usuario.nombre,
-  productos: cartItems.map(item => ({
-    nombre: item.nombre,
-    cantidad: item.cantidad,
-    valor: item.valor
-  })),
-  total: cartItems.reduce((acc, item) => acc + item.valor * item.cantidad, 0),
-  fecha: new Date().toISOString(),
-  estado: "pendiente" // NUEVO
-};
+// Ejemplo: al confirmar el pedido
+const usuario = { nombre: "Cliente" }; // Usa el nombre real si lo tienes
+const cartItems = JSON.parse(localStorage.getItem('carrito')) || [];
+const pedidos = JSON.parse(localStorage.getItem('pedidos')) || [];
+
+if (cartItems.length > 0) {
+  const nuevoPedido = {
+    nombre: usuario.nombre,
+    productos: cartItems.map(item => ({
+      nombre: item.nombre,
+      cantidad: item.cantidad,
+      valor: item.valor
+    })),
+    total: cartItems.reduce((acc, item) => acc + item.valor * item.cantidad, 0),
+    fecha: new Date().toISOString(),
+    estado: "pendiente"
+  };
+  pedidos.push(nuevoPedido);
+  localStorage.setItem('pedidos', JSON.stringify(pedidos));
+  localStorage.removeItem('carrito'); // Vacía el carrito
+  // Redirige o muestra mensaje de éxito
+}
