@@ -4,57 +4,71 @@
 <header>
  <!-- Header responsive con hamburguesa -->
         <nav class="navbar navbar-expand-md navbar-light bg-light">
-            <div class="container-fluid">
-            <a class="navbar-brand"  href="../index.html">
-                <img src="../imagenes/SOKE - LOGO1.png" class="logo" alt="SOKE">
+          <div class="container-fluid justify-content-between">
+            <a class="navbar-brand" href="../index.html">
+              <img src="../imagenes/SOKE - LOGO1.png" class="logo" alt="SOKE">
             </a>
             <img class="tipo_usuario nav-distribuidor" src="../imagenes/distribuidor.png" alt="">
             <img class="tipo_usuario nav-motociclista" src="../imagenes/motero.png" alt="">
 
             <!-- Botón hamburguesa -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu">
+              <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- Contenido del menú -->
-            <div class="collapse navbar-collapse menu" id="navbarNav" >
-                <ul class="navbar-nav ms-auto d-flex align-items-center ">
-                <li class="nav-item nav-comun">
-                    <a class="nav-link" href="../html/paginabienvenida.html">
-                    <img src="../Icons/Nav-home.ico" class="nav-img" alt="Inicio">Home
-                    </a>
-                </li>
-                <li class="nav-item nav-comun">
-                    <a class="nav-link" href="../html/Catalogo.html">
-                    <img src="../Icons/catalogo.png" class="nav-img" alt="Inicio">Catalogo
-                    </a>
-                </li>
-                <li class="nav-item nav-motociclista">
-                    <a class="nav-link" href="../html/Carrito.html">
-                    <img src="../Icons/Nav-ShopCar.ico" class="nav-img" alt="Carrito">Carrito
-                    </a>
-                </li>
-                <li class="nav-item nav-distribuidor">
-                    <a class="nav-link" href="../html/AgregarProductos.html">
-                    <img src="../Icons/Agregar_Producto.png" class="nav-img" alt="Agregar Producto">Agregar Producto
-                    </a>
-                </li>
-                <li class="nav-item nav-motociclista">
-                    <a class="nav-link" href="../html/menuBusqueda.html">
-                    <img src="../Icons/Nav-Searcher.ico" class="nav-img" alt="Buscar">Buscar
-                    </a>
-                </li>
-                <li class="nav-item nav-comun">
-                    <a class="nav-link" href="../html/PaginadePedidos.html">
-                    <img src="../Icons/pedido.png" class="nav-img" alt="Pedidos">Pedidos
-                    </a>
-                </li>
-                <li class="nav-item nav-comun">
-                    <a class="nav-link" href="../html/perfil.html">
-                    <img src="../Icons/Nav-Profile.jpg" class="nav-img" alt="Perfil">Perfil
-                    </a>
-                </li>
-                </ul>
+            <!-- Menú base oculto para clonar -->
+            <ul id="menu-base" class="d-none">
+              <li class="nav-item nav-comun">
+                <a class="nav-link" href="../html/paginabienvenida.html">
+                  <img src="../Icons/Nav-home.ico" class="nav-img" alt="Inicio">Home
+                </a>
+              </li>
+              <li class="nav-item nav-comun">
+                <a class="nav-link" href="../html/Catalogo.html">
+                  <img src="../Icons/catalogo.png" class="nav-img" alt="Inicio">Catalogo
+                </a>
+              </li>
+              <li class="nav-item nav-motociclista">
+                <a class="nav-link" href="../html/Carrito.html">
+                  <img src="../Icons/Nav-ShopCar.ico" class="nav-img" alt="Carrito">Carrito
+                </a>
+              </li>
+              <li class="nav-item nav-distribuidor">
+                <a class="nav-link" href="../html/AgregarProductos.html">
+                  <img src="../Icons/Agregar_Producto.png" class="nav-img" alt="Agregar Producto">Agregar Producto
+                </a>
+              </li>
+              <li class="nav-item nav-motociclista">
+                <a class="nav-link" href="../html/menuBusqueda.html">
+                  <img src="../Icons/Nav-Searcher.ico" class="nav-img" alt="Buscar">Buscar
+                </a>
+              </li>
+              <li class="nav-item nav-comun">
+                <a class="nav-link" href="../html/PaginadePedidos.html">
+                  <img src="../Icons/pedido.png" class="nav-img" alt="Pedidos">Pedidos
+                </a>
+              </li>
+              <li class="nav-item nav-comun">
+                <a class="nav-link" href="../html/perfil.html">
+                  <img src="../Icons/Nav-Profile.jpg" class="nav-img" alt="Perfil">Perfil
+                </a>
+              </li>
+            </ul>
+
+            <!-- Menú offcanvas para móviles -->
+            <div class="offcanvas offcanvas-end d-md-none" tabindex="-1" id="offcanvasMenu">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title">Menú</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+              </div>
+              <div class="offcanvas-body">
+                <ul id="menu-mobile" class="navbar-nav ms-auto d-flex flex-column align-items-start"></ul>
+              </div>
+            </div>
+
+            <!-- Menú normal para pantallas grandes -->
+            <div class="collapse navbar-collapse menu d-none d-md-block" id="navbarNav">
+              <ul id="menu-desktop" class="navbar-nav ms-auto d-flex align-items-center"></ul>
             </div>
             </div>
         </nav>

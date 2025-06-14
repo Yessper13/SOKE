@@ -101,3 +101,59 @@ main {
     max-height: 3rem;
 }
 }
+@media (max-width: 767.98px) {
+  .menu.d-none {
+    display: none !important;
+  }
+}
+
+/* Centra el menú en desktop y ajusta el header */
+@media (min-width: 768px) {
+  .navbar .container-fluid {
+    justify-content: space-between !important;
+  }
+  .navbar-collapse.menu {
+    flex-grow: 0;
+  }
+}
+
+/* Ajusta el logo y el menú en mobile */
+@media (max-width: 767.98px) {
+  .navbar .container-fluid {
+    justify-content: space-between !important;
+  }
+  .navbar-brand {
+    margin-right: 0;
+  }
+  .navbar-toggler {
+    margin-left: auto;
+  }
+}
+
+/* Opcional: mejora el aspecto del menú offcanvas */
+.offcanvas .nav-link {
+  width: 100%;
+  justify-content: flex-start;
+  margin-bottom: 8px;
+}
+
+/* Centra y da tamaño uniforme a los botones del menú offcanvas */
+@media (max-width: 767.98px) {
+  #offcanvasMenu .offcanvas-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #offcanvasMenu .nav-link {
+    width: 220px;
+    min-width: 220px;
+    max-width: 90vw;
+    justify-content: center;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  #offcanvasMenu ul {
+    width: 100%;
+    align-items: center !important;
+  }
+}

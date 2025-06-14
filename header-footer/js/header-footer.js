@@ -36,4 +36,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 footer.innerHTML = data;
             });
     }
+
+    // Clonar menú base en los menús de móvil y desktop
+    function clonarMenu() {
+        const menuBase = document.getElementById('menu-base');
+        if (!menuBase) return;
+        const menuMobile = document.getElementById('menu-mobile');
+        const menuDesktop = document.getElementById('menu-desktop');
+        if (menuMobile) {
+            menuMobile.innerHTML = menuBase.innerHTML;
+        }
+        if (menuDesktop) {
+            menuDesktop.innerHTML = menuBase.innerHTML;
+        }
+    }
+
+    // Espera a que el header esté cargado antes de clonar el menú
+    setTimeout(clonarMenu, 100);
 });
