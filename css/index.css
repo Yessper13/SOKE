@@ -2,10 +2,31 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
   margin: 0;
-  background: #fff;
+  background-image: url('../imagenes/fondoindex.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* Capa para oscurecer el fondo */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.699); /* Ajusta la opacidad aquí */
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Asegúrate que el contenido esté por encima de la capa oscura */
+body > * {
+  position: relative;
+  z-index: 1;
 }
 
 h1 {
+  color: #fff;
   margin-top: 40px;
   margin-bottom: 30px;
 }

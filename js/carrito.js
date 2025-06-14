@@ -54,23 +54,42 @@ function changeQuantity(index, delta) {
 }
 
 document.getElementById("checkout-btn").addEventListener("click", function(e) {
-    // Evita el comportamiento por defecto si es un formulario
-    if (e) e.preventDefault();
+    e.preventDefault();
 
-    // Obtén los productos del carrito
     let cartItems = JSON.parse(localStorage.getItem('carrito')) || [];
-
-    // Validación: si el carrito está vacío, muestra mensaje y no deja pasar
     if (!cartItems.length) {
         mostrarMensaje("El carrito está vacío. Agrega productos antes de continuar.");
         return;
     }
 
-    // Si hay productos, puedes continuar con el flujo normal
-    // ...tu lógica para continuar con el pedido...
-    // Por ejemplo:
-    window.location.href = "../html/productoSeparado.html";
-    // El vaciado del carrito debe hacerse solo después de completar el pedido, no aquí.
+    // Obtener usuario activo
+    const usuario = JSON.parse(localStorage.getItem('usuarioActivo')) || { nombre: "Invitado" };
+
+    // Crear pedido
+    const pedido = {
+        nombre: usuario.nombre,
+        correo: usuario.correo || "",
+        cedula: usuario.cedula || "",
+        productos: cartItems.map(item => ({
+            nombre: item.nombre,
+            cantidad: item.cantidad,
+            valor: item.valor
+        })),
+        total: cartItems.reduce((acc, item) => acc + item.valor * item.cantidad, 0),
+        fecha: new Date().toISOString(),
+        estado: "pendiente"
+    };
+
+    // Guardar pedido en localStorage
+    let pedidos = JSON.parse(localStorage.getItem('pedidos')) || [];
+    pedidos.push(pedido);
+    localStorage.setItem('pedidos', JSON.stringify(pedidos));
+
+    // Vaciar carrito
+    localStorage.removeItem('carrito');
+
+    // Redirigir a la página de pedidos
+    window.location.href = "../html/PaginadePedidos.html";
 });
 
 // Inicializar
