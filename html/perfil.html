@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -20,13 +20,30 @@
         </div>
         <div class="perfil-nombre">Juan Pérez</div>
         <div class="perfil-detalles">
-            <div class="perfil-detalles-item"><strong>Dirección:</strong> Calle Falsa 123, Ciudad</div>
-            <div class="perfil-detalles-item"><strong>Teléfono:</strong> +58 412-1234567</div>
-            <div class="perfil-detalles-item"><strong>Correo:</strong> juan.perez@email.com</div>
-            <div class="perfil-detalles-item"><strong>Cédula:</strong> V-12345678</div>
+            <div class="perfil-detalles-item">
+                <strong>Dirección:</strong>
+                <span id="direccion-text">Calle Falsa 123, Ciudad</span>
+                <input type="text" id="direccion-input" class="form-control d-none" value="Calle Falsa 123, Ciudad">
+            </div>
+            <div class="perfil-detalles-item">
+                <strong>Teléfono:</strong>
+                <span id="telefono-text">+58 412-1234567</span>
+                <input type="text" id="telefono-input" class="form-control d-none" value="+58 412-1234567">
+            </div>
+            <div class="perfil-detalles-item">
+                <strong>Correo:</strong>
+                <span id="correo-text">juan.perez@email.com</span>
+                <input type="email" id="correo-input" class="form-control d-none" value="juan.perez@email.com">
+            </div>
+            <div class="perfil-detalles-item">
+                <strong>Cédula:</strong>
+                <span id="cedula-text">V-12345678</span>
+                <input type="text" id="cedula-input" class="form-control d-none" value="V-12345678">
+            </div>
         </div>
         <div class="perfil-botones">
-            <button class="perfil-editar-btn">Editar Perfil</button>
+            <button class="perfil-editar-btn" id="editar-btn">Editar Perfil</button>
+            <button class="perfil-editar-btn d-none" id="guardar-btn">Guardar</button>
             <button class="perfil-editar-btn cerrar-sesion-btn">Cerrar Sesión</button>
         </div>
     </main>
